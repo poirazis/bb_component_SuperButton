@@ -1,0 +1,309 @@
+{
+  "type": "component",
+  "metadata": {
+    "svelteMajor": 5
+  },
+  "schema": {
+    "name": "bb-test",
+    "friendlyName": "bb-test",
+    "description": "Test Component",
+    "icon": "Text",
+    "settings": [
+      {
+        "type": "text",
+        "key": "text",
+        "label": "Text",
+        "defaultValue": "Action"
+      },
+      {
+        "type": "select",
+        "key": "buttonClass",
+        "label": "Class",
+        "options": [
+          {
+            "label": "Button",
+            "value": "button"
+          },
+          {
+            "label": "Action Button",
+            "value": "actionButton"
+          }
+        ],
+        "defaultValue": "button"
+      },
+      {
+        "type": "select",
+        "key": "type",
+        "label": "Type",
+        "showInBar": true,
+
+        "options": [
+          {
+            "label": "Action",
+            "value": "cta"
+          },
+          {
+            "label": "Primary",
+            "value": "primary"
+          },
+          {
+            "label": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "label": "Warning",
+            "value": "warning"
+          },
+          {
+            "label": "Over Background",
+            "value": "overBackground"
+          },
+          {
+            "label": "Flat White",
+            "value": "ink"
+          }
+        ],
+        "defaultValue": "primary"
+      },
+      {
+        "type": "select",
+        "key": "size",
+        "label": "Size",
+        "showInBar": true,
+        "options": [
+          {
+            "label": "Extra Small",
+            "value": "XS"
+          },
+          {
+            "label": "Small",
+            "value": "S"
+          },
+          {
+            "label": "Medium",
+            "value": "M"
+          },
+          {
+            "label": "Large",
+            "value": "L"
+          }
+        ],
+        "defaultValue": "M"
+      },
+      {
+        "type": "text",
+        "key": "tooltip",
+        "label": "Tooltip"
+      },
+      {
+        "type": "phosphorIcon",
+        "key": "icon",
+        "label": "Icon"
+      },
+      {
+        "type": "color",
+        "key": "iconColor",
+        "label": "Icon Color",
+        "dependsOn": "icon"
+      },
+      {
+        "type": "boolean",
+        "key": "filledIcon",
+        "label": "Filled Icon",
+        "dependsOn": "icon"
+      },
+      {
+        "type": "boolean",
+        "key": "iconAfterText",
+        "label": "After Text",
+        "dependsOn": "icon"
+      },
+      {
+        "type": "boolean",
+        "key": "iconOnly",
+        "label": "Icon Only",
+        "dependsOn": "icon"
+      },
+      {
+        "type": "boolean",
+        "key": "quiet",
+        "label": "Quiet"
+      },
+      {
+        "type": "boolean",
+        "key": "disabled",
+        "label": "Disabled"
+      },
+      {
+        "type": "boolean",
+        "key": "confirm",
+        "label": "Confirmation",
+        "showInBar": true,
+        "barIcon": "Check"
+      },
+      {
+        "type": "boolean",
+        "key": "workingState",
+        "label": "Working State"
+      },
+      {
+        "type": "select",
+        "key": "actionsMode",
+        "label": "Actions Mode",
+        "showInBar": true,
+        "barStyle": "buttons",
+        "defaultValue": "normal",
+        "options": [
+          {
+            "label": "Normal",
+            "value": "normal",
+            "barIcon": "cursor-click"
+          },
+          {
+            "label": "Timer",
+            "value": "timer",
+            "barIcon": "clock-clockwise"
+          },
+          {
+            "label": "Loop",
+            "value": "loop",
+            "barIcon": "DataRefresh"
+          },
+          {
+            "label": "Conditional",
+            "value": "conditional",
+            "barIcon": "Function"
+          }
+        ]
+      },
+      {
+        "type": "number",
+        "key": "timerDuration",
+        "label": "Run Every (s)",
+        "dependsOn": {
+          "setting": "actionsMode",
+          "value": "timer"
+        },
+        "defaultValue": 60,
+        "min": 1
+      },
+      {
+        "type": "event",
+        "key": "onClick",
+        "label": "On Click",
+        "dependsOn": {
+          "setting": "actionsMode",
+          "value": "normal"
+        }
+      },
+      {
+        "type": "event",
+        "key": "onTimer",
+        "label": "On Timer",
+        "dependsOn": {
+          "setting": "actionsMode",
+          "value": "timer"
+        }
+      },
+      {
+        "section": true,
+        "name": "Batch Action Execution",
+        "dependsOn": {
+          "setting": "actionsMode",
+          "value": "loop"
+        },
+        "settings": [
+          {
+            "type": "text",
+            "key": "loopSource",
+            "label": "Loop Over",
+            "placeholder": "Array or CSV"
+          },
+          {
+            "type": "event",
+            "key": "onLoopStart",
+            "label": "Before Loop",
+            "context": [
+              {
+                "key": "iterations",
+                "label": "Iterations"
+              }
+            ]
+          },
+          {
+            "type": "event",
+            "key": "loopEvent",
+            "label": "Loop Actions",
+            "context": [
+              {
+                "key": "idx",
+                "label": "Index"
+              },
+              {
+                "key": "value",
+                "label": "Value"
+              }
+            ]
+          },
+          {
+            "type": "number",
+            "key": "loopDelay",
+            "label": "Loop Delay",
+            "min": 100,
+            "defaultValue": 750
+          },
+          {
+            "type": "event",
+            "key": "onLoopEnd",
+            "label": "After Loop"
+          }
+        ]
+      },
+      {
+        "section": true,
+        "name": "Conditional Action Execution",
+        "dependsOn": {
+          "setting": "actionsMode",
+          "value": "conditional"
+        },
+        "settings": [
+          {
+            "type": "text",
+            "key": "condition",
+            "label": "Condition"
+          },
+          {
+            "type": "event",
+            "key": "onTrueCondition",
+            "label": "If true Actions"
+          },
+          {
+            "type": "event",
+            "key": "onFalseCondition",
+            "label": "Else Actions"
+          }
+        ]
+      },
+      {
+        "type": "buttonConditions",
+        "label": "Conditions",
+        "key": "conditions",
+        "nestedOnly": true,
+        "contextAccess": {
+          "global": false,
+          "self": true
+        }
+      },
+      {
+        "type": "text",
+        "label": "Disabled",
+        "key": "disabledTemplate",
+        "nestedOnly": true,
+        "contextAccess": {
+          "global": false,
+          "self": true
+        }
+      }
+    ]
+  }
+}

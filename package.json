@@ -1,0 +1,36 @@
+{
+  "name": "bb-test",
+  "version": "1.0.0",
+  "description": "Test Component",
+  "license": "MIT",
+  "svelte": "index.js",
+  "module": "dist/plugin.min.js",
+  "schema.metadata.svelteMajor": 5,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "dependencies": {
+    "@poirazis/superlib": "^0.0.2",
+    "ogl": "^1.0.11"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/plugin.min.js",
+      "require": "./dist/plugin.min.js"
+    }
+  },
+  "devDependencies": {
+    "@budibase/backend-core": "^3.38.5",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "tar": "^7.5.16",
+    "terser": "^5.48.0",
+    "vite": "^8.0.16",
+    "vite-plugin-css-injected-by-js": "^5.0.1",
+    "vite-plugin-singlefile": "^2.3.3"
+  },
+  "peerDependencies": {
+    "svelte": "5.55.10"
+  }
+}
