@@ -1,7 +1,7 @@
 {
-  "name": "bb-test",
+  "name": "bb_component_SuperButton",
   "version": "1.0.0",
-  "description": "Test Component",
+  "description": "Super Button",
   "license": "MIT",
   "svelte": "index.js",
   "module": "dist/plugin.min.js",
@@ -12,8 +12,7 @@
     "watch": "vite build --watch"
   },
   "dependencies": {
-    "@poirazis/superlib": "^0.0.2",
-    "ogl": "^1.0.11"
+    "@poirazis/superlib": "^0.0.2"
   },
   "exports": {
     ".": {

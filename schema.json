@@ -4,9 +4,9 @@
     "svelteMajor": 5
   },
   "schema": {
-    "name": "bb-test",
-    "friendlyName": "bb-test",
-    "description": "Test Component",
+    "name": "bb_component_SuperButton",
+    "friendlyName": "Super Button",
+    "description": "Super Button",
     "icon": "Text",
     "settings": [
       {
