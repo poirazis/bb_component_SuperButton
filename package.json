@@ -12,7 +12,7 @@
     "watch": "vite build --watch"
   },
   "dependencies": {
-    "@poirazis/superlib": "^0.0.2"
+    "@poirazis/superlib": "^0.0.4"
   },
   "exports": {
     ".": {

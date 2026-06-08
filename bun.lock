@@ -5,7 +5,7 @@
     "": {
       "name": "bb_component_SuperButton",
       "dependencies": {
-        "@poirazis/superlib": "^0.0.2",
+        "@poirazis/superlib": "^0.0.4",
       },
       "devDependencies": {
         "@budibase/backend-core": "^3.38.5",
@@ -192,7 +192,7 @@
 
     "@oxc-project/types": ["@oxc-project/types@0.133.0", "", {}, "sha512-KzkdCd6Uxqnf6l3HOw1xfatAlUURA0g14cvBYFyJ5SaNOQbOUvBr9PKArcPcrNIeRsBdgcUzOGrhKveVpvOIGA=="],
 
-    "@poirazis/superlib": ["@poirazis/superlib@0.0.2", "", { "peerDependencies": { "svelte": "^5.0.0" } }, "sha512-9xWAcNAnh9pinBf1P4d1RiH/fJ4fHfMVfOUdXUFJtdnKpHSM9izUmA+bLNvxv7kTow8es01r2FZRsxQvLBOVbA=="],
+    "@poirazis/superlib": ["@poirazis/superlib@0.0.4", "", { "peerDependencies": { "svelte": "^5.0.0" } }, "sha512-orQ/6SW3a/be8hMezrTgKUDDJYpzbk2RmBNmO3o8XeENbq2PjxR38ADVVTTQmBvpyD+laodcE5LVsspEPFSlaw=="],
 
     "@protobufjs/aspromise": ["@protobufjs/aspromise@1.1.2", "", {}, "sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ=="],
 
@@ -793,8 +793,6 @@
     "object-sizeof": ["object-sizeof@2.6.1", "", { "dependencies": { "buffer": "^6.0.3" } }, "sha512-a7VJ1Zx7ZuHceKwjgfsSqzV/X0PVGvpZz7ho3Dn4Cs0LLcR5e5WuV+gsbizmplD8s0nAXMJmckKB2rkSiPm/Gg=="],
 
     "obug": ["obug@2.1.2", "", {}, "sha512-AWGB9WFcRXOQs48Z/udjI5ZcZMHXwX8XPByNpOydgcGsDLIzjGizhoMWJyKAWze7AVW/2W1i+/gPX4YtKe5cyg=="],
-
-
 
     "on-exit-leak-free": ["on-exit-leak-free@2.1.2", "", {}, "sha512-0eJJY6hXLGf1udHwfNftBqH+g73EU4B504nZeKpz1sYRKafAghwxEJunB2O7rDZkL4PGfsMVnTXZ2EjibbqcsA=="],
 
