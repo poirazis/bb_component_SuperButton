@@ -96,6 +96,7 @@
         "label": "Tooltip"
       },
       {
+        "tag": "style",
         "type": "phosphorIcon",
         "key": "icon",
         "label": "Icon"
