@@ -66,19 +66,32 @@ const copyAndHash = () => ({
   apply: "build",
   async writeBundle() {
     writeFileSync("dist/schema.json", readFileSync("schema.json", "utf8"));
-    writeFileSync("dist/package.json", readFileSync("package.json", "utf8"));
 
     const jsBuffer = readFileSync("dist/plugin.min.js");
     const hash = createHash("sha1").update(jsBuffer).digest("hex");
 
     const schema = JSON.parse(readFileSync("dist/schema.json", "utf8"));
+    const version = pkg.version;
     writeFileSync(
       "dist/schema.json",
       JSON.stringify(
         {
           ...schema,
           hash,
-          version: pkg.version,
+          version,
+        },
+        null,
+        2,
+      ),
+    );
+    writeFileSync(
+      "dist/package.json",
+      JSON.stringify(
+        {
+          name: pkg.name,
+          version,
+          description: pkg.description,
+          license: pkg.license,
         },
         null,
         2,
