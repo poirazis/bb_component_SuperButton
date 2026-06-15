@@ -288,22 +288,7 @@
       {
         "type": "buttonConditions",
         "label": "Conditions",
-        "key": "conditions",
-        "nestedOnly": true,
-        "contextAccess": {
-          "global": false,
-          "self": true
-        }
-      },
-      {
-        "type": "text",
-        "label": "Disabled",
-        "key": "disabledTemplate",
-        "nestedOnly": true,
-        "contextAccess": {
-          "global": false,
-          "self": true
-        }
+        "key": "conditions"
       }
     ]
   }

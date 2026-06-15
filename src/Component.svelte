@@ -7,15 +7,13 @@
   const { styleable } = getContext("sdk");
   const component = getContext("component");
 
-
   let effectiveStyles = $derived({
     ...$component.styles,
     normal: {
       ...$component.styles?.normal,
-      "width": "fit-content",
+      width: "fit-content",
     },
   });
-
 </script>
 
 <div use:styleable={effectiveStyles}>
@@ -23,5 +21,4 @@
 </div>
 
 <style>
-
 </style>
