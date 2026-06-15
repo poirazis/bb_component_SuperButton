@@ -12,7 +12,7 @@
     "watch": "vite build --watch"
   },
   "dependencies": {
-    "@poirazis/superlib": "^0.0.4"
+    "@poirazis/superlib": "^0.0.15"
   },
   "exports": {
     ".": {
@@ -27,9 +27,13 @@
     "terser": "^5.48.0",
     "vite": "^8.0.16",
     "vite-plugin-css-injected-by-js": "^5.0.1",
-    "vite-plugin-singlefile": "^2.3.3"
+    "vite-plugin-singlefile": "^2.3.3",
+    "svelte": "5.55.10"
   },
   "peerDependencies": {
+    "svelte": "5.55.10"
+  },
+  "overrides": {
     "svelte": "5.55.10"
   }
 }
