@@ -96,7 +96,6 @@
         "label": "Tooltip"
       },
       {
-        "tag": "style",
         "type": "phosphorIcon",
         "key": "icon",
         "label": "Icon"
@@ -233,7 +232,7 @@
           },
           {
             "type": "event",
-            "key": "loopEvent",
+            "key": "onLoopEvent",
             "label": "Loop Actions",
             "context": [
               {
