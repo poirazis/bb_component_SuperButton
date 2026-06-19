@@ -92,6 +92,7 @@ const copyAndHash = () => ({
           version,
           description: pkg.description,
           license: pkg.license,
+          author: pkg.author,
         },
         null,
         2,

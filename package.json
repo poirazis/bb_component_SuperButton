@@ -2,6 +2,7 @@
   "name": "bb_component_SuperButton",
   "version": "1.0.0",
   "description": "Super Button",
+  "author": "Michael Poirazi - https://github.com/poirazis",
   "license": "MIT",
   "svelte": "index.js",
   "module": "dist/plugin.min.js",
