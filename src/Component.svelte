@@ -1,6 +1,6 @@
 <script>
   import { getContext } from "svelte";
-  import { Button } from "@poirazis/superlib";
+  import { SuperButton } from "@poirazis/superlib";
 
   let props = $props();
 
@@ -17,7 +17,7 @@
 </script>
 
 <div use:styleable={effectiveStyles}>
-  <Button {...props} />
+  <SuperButton {...props} />
 </div>
 
 <style>
