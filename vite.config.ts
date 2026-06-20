@@ -101,13 +101,17 @@ const copyAndHash = () => ({
   },
 });
 
-export default defineConfig({
+export default defineConfig(({ mode }) => {
+  const isDev = mode === "development";
+
+  return {
   plugins: [
     clean(),
     validateSchema(),
     svelte({
       emitCss: true,
       preprocess: [],
+      dynamicCompileOptions: () => (isDev ? { dev: true } : {}),
     }),
     cssInjectedByJsPlugin(),
     viteSingleFile(),
@@ -123,8 +127,8 @@ export default defineConfig({
       name: "plugin",
     },
     outDir: "dist",
-    minify: "terser",
-    sourcemap: false,
+    minify: isDev ? false : "terser",
+    sourcemap: isDev,
     cssCodeSplit: false,
     rollupOptions: {
       external: (id) => id === "svelte" || id.startsWith("svelte/"),
@@ -144,4 +148,5 @@ export default defineConfig({
       },
     },
   },
+  };
 });
