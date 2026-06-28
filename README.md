@@ -20,8 +20,11 @@ A custom Budibase component that adds an enhanced button to the builder componen
 
 ```bash
 bun install
-bun run build      # outputs dist/bb_component_SuperButton-1.0.0.tar.gz
-bun run watch      # rebuild on change
+bun link @poirazis/superlib   # local superlib (run after every bun install)
+bun run build                # outputs dist/bb_component_SuperButton-1.0.0.tar.gz
+bun run watch                # rebuild on change
 ```
+
+One-time monorepo setup: `cd ../../superlib && bun link` (see workspace `AGENTS.md`).
 
 Built with Svelte 5. Requires a Budibase instance that supports Svelte 5 custom components.

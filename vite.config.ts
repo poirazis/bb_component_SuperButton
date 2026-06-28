@@ -66,19 +66,33 @@ const copyAndHash = () => ({
   apply: "build",
   async writeBundle() {
     writeFileSync("dist/schema.json", readFileSync("schema.json", "utf8"));
-    writeFileSync("dist/package.json", readFileSync("package.json", "utf8"));
 
     const jsBuffer = readFileSync("dist/plugin.min.js");
     const hash = createHash("sha1").update(jsBuffer).digest("hex");
 
     const schema = JSON.parse(readFileSync("dist/schema.json", "utf8"));
+    const version = pkg.version;
     writeFileSync(
       "dist/schema.json",
       JSON.stringify(
         {
           ...schema,
           hash,
-          version: pkg.version,
+          version,
+        },
+        null,
+        2,
+      ),
+    );
+    writeFileSync(
+      "dist/package.json",
+      JSON.stringify(
+        {
+          name: pkg.name,
+          version,
+          description: pkg.description,
+          license: pkg.license,
+          author: pkg.author,
         },
         null,
         2,
@@ -87,13 +101,17 @@ const copyAndHash = () => ({
   },
 });
 
-export default defineConfig({
+export default defineConfig(({ mode }) => {
+  const isDev = mode === "development";
+
+  return {
   plugins: [
     clean(),
     validateSchema(),
     svelte({
       emitCss: true,
       preprocess: [],
+      dynamicCompileOptions: () => (isDev ? { dev: true } : {}),
     }),
     cssInjectedByJsPlugin(),
     viteSingleFile(),
@@ -109,8 +127,8 @@ export default defineConfig({
       name: "plugin",
     },
     outDir: "dist",
-    minify: "terser",
-    sourcemap: false,
+    minify: isDev ? false : "terser",
+    sourcemap: isDev,
     cssCodeSplit: false,
     rollupOptions: {
       external: (id) => id === "svelte" || id.startsWith("svelte/"),
@@ -130,4 +148,5 @@ export default defineConfig({
       },
     },
   },
+  };
 });
